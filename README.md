@@ -2,6 +2,8 @@
 
 Nightwatch.js 🦉 plugin adding custom assertions for covering email functionality in e2e test scenarios with mailtrap.io 📨
 
+[![Node.js CI](https://github.com/reallymello/nightwatch-mailtrap/actions/workflows/node.js.yml/badge.svg)](https://github.com/reallymello/nightwatch-mailtrap/actions/workflows/node.js.yml)
+
 ## Purpose
 
 In your end-to-end (e2e) Nightwatch browser test automation you may encounter scenarios where you need to ensure an email is sent out by the system under test to the correct recipient and verify its contents. Other scenarios, like user registration, may require following a link received in an email. This is hard to do programatically with most mail services in a CI/CD system, but Mailtrap provides an email sandbox service with API that let's you programtically receive and read email messages to their virtual inboxes.
