@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "lint": "eslint . --ext .js,.ts",
+    "lint": "eslint . --ext .js",
     "lint:fix": "eslint . --ext .js,.ts --fix",
     "test": "rimraf ./tests_output/ && nightwatch --env chrome"
   },

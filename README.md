@@ -1,10 +1,13 @@
 # nightwatch-mailtrap
+
 Nightwatch.js 🦉 plugin adding custom assertions for covering email functionality in e2e test scenarios with mailtrap.io 📨
 
 ## Purpose
+
 In your end-to-end (e2e) Nightwatch browser test automation you may encounter scenarios where you need to ensure an email is sent out by the system under test to the correct recipient and verify its contents. Other scenarios, like user registration, may require following a link received in an email. This is hard to do programatically with most mail services in a CI/CD system, but Mailtrap provides an email sandbox service with API that let's you programtically receive and read email messages to their virtual inboxes.
 
 The nightwatch-mailtrap plugin will allow one to programatically
+
 - Assert inbox message count (optionally filtered by subject, recipient name, or recipient address)
 - Assert partial text match of email message body
 - Extract the first link from an email message body
@@ -15,7 +18,7 @@ The nightwatch-mailtrap plugin will allow one to programatically
 module.exports = {
   'should get messages': async (browser) => {
     const inboxId = browser.globals.mailtrap.mailboxId;
-    
+
     // Ability to grab the link URL out of the message body
     let url = await browser.getLinkFromEmail(inboxId);
     // Example navigating the browser to the URL from the message body link
@@ -28,7 +31,11 @@ module.exports = {
     browser.assert.expectedInboxCount(1, inboxId, 'hello');
 
     // Test that the first email message containing Welcome has "Bienvenue à Nightwatch" in the message body
-    browser.assert.emailBodyContains('Bienvenue à Nightwatch', inboxId, "Welcome");
+    browser.assert.emailBodyContains(
+      'Bienvenue à Nightwatch',
+      inboxId,
+      'Welcome'
+    );
 
     browser.end();
   },
@@ -45,11 +52,12 @@ module.exports = {
 module.exports = {
   ...
   src_folders: ['test'],
-  
+
   plugins: ['nightwatch-mailtrap'],
   ...
 }
 ```
+
 3. Run `npm install nightwatch-mailtrap --save` to ensure the library is added to your project and can be used as a plugin.
 
 ## Alternate Installation (Older method not using plugin pattern)
@@ -88,35 +96,42 @@ test_settings: {
       },
     },
 ```
+
 _It's recommended you use environment variables as shown instead of hardcoding these values_
 
 ## Usage
 
-Once the configuration changes are made the commands and assertions will be made available to the Nightwatch API (browser object).
+Once the configuration changes are made the commands and assertions will be made available to the Nightwatch API (browser object) in your test cases.
 
-### browser.getLinkFromEmail(mailboxId: string required, searchText: string optional) => string
+### browser.getLinkFromEmail(mailboxId: string, searchText: string?) => string
+
 This will return the href value of the first link found in the most recent email in the specified mailbox id.
 
 ```js
-const url = await browser.getLinkFromEmail("12345", "activate your account");
+const url = await browser.getLinkFromEmail('12345', 'activate your account');
 browser.navigate(url);
 ```
-### browser.assert.emailBodyContains(expectedText: string, mailboxId: string required, searchText: string optional) => NightwatchAPI
+
+### browser.assert.emailBodyContains(expectedText: string, mailboxId: string, searchText: string?) => NightwatchAPI
+
 This is a custom assertion that will return pass or fail if a partial match is found of your expectedText in the most recent email, filtered by the searchText parameter if provided.
 
 ```js
 browser.assert.emailBodyContains(
-      'reaching out to you',
-      browser.globals.mailtrap.mailboxId,
-      'car warranty'
-    );
+  'reaching out to you',
+  browser.globals.mailtrap.mailboxId,
+  'car warranty'
+);
 ```
-### browser.assert.expectedInboxCount(expectedCount: number, mailboxId: string required, searchText: string optional) => NightwatchAPI
+
+### browser.assert.expectedInboxCount(expectedCount: number, mailboxId: string, searchText: string?) => NightwatchAPI
 
 ```js
 browser.assert.expectedInboxCount(
-      2,
-      browser.globals.mailtrap.mailboxId,
-      'Jane'
-    );
+  2,
+  browser.globals.mailtrap.mailboxId,
+  'Jane'
+);
 ```
+
+Check the [software testing](https://www.davidmello.com/software-testing) blog for usage articles.
