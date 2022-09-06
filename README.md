@@ -6,9 +6,9 @@ Nightwatch.js 🦉 plugin adding custom assertions for covering email functional
 
 ## Purpose
 
-In your end-to-end (e2e) Nightwatch browser test automation you may encounter scenarios where you need to ensure an email is sent out by the system under test to the correct recipient and verify its contents. Other scenarios, like user registration, may require following a link received in an email. This is hard to do programatically with most mail services in a CI/CD system, but Mailtrap provides an email sandbox service with API that let's you programtically receive and read email messages to their virtual inboxes.
+In your end-to-end (e2e) Nightwatch browser test automation you may encounter scenarios where you need to ensure an email is sent out by the system under test to the correct recipient and verify its contents. Other scenarios, like user registration, may require following a link received in an email. This is hard to do programmatically with most mail services in a CI/CD system, but Mailtrap provides an email sandbox service with API that let's you programmatically receive and read email messages to their virtual inboxes.
 
-The nightwatch-mailtrap plugin will allow one to programatically
+The nightwatch-mailtrap plugin will allow one to programmatically
 
 - Assert inbox message count (optionally filtered by subject, recipient name, or recipient address)
 - Assert partial text match of email message body
@@ -136,4 +136,4 @@ browser.assert.expectedInboxCount(
 );
 ```
 
-Check the [software testing](https://www.davidmello.com/software-testing) blog for usage articles.
+Check my [software testing](https://www.davidmello.com/software-testing) blog for usage articles.
