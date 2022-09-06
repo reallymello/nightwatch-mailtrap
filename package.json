@@ -1,0 +1,53 @@
+{
+  "name": "nightwatch-mailtrap",
+  "version": "1.0.0",
+  "description": "Nightwatch plugin adding custom assertions for e2e email test scenarios with mailtrap.io",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "eslint . --ext .js,.ts",
+    "lint:fix": "eslint . --ext .js,.ts --fix",
+    "test": "rimraf ./tests_output/ && nightwatch --env chrome"
+  },
+  "files": [
+    "nightwatch/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reallymello/nightwatch-mailtrap.git"
+  },
+  "keywords": [
+    "nightwatch",
+    "mailtrap",
+    "plugin",
+    "selenium",
+    "nightwatch.js",
+    "mailtrap.io",
+    "testing",
+    "e2e"
+  ],
+  "author": "David Mello (https://www.davidmello.com)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/reallymello/nightwatch-mailtrap/issues"
+  },
+  "homepage": "https://github.com/reallymello/nightwatch-mailtrap#readme",
+  "devDependencies": {
+    "assert": "^2.0.0",
+    "chromedriver": "^105.0.0",
+    "eslint": "^8.23.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.0.1",
+    "mocha": "^10.0.0",
+    "prettier": "^2.7.1"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "nightwatch": "^2.3.4",
+    "superagent": "^8.0.0"
+  }
+}
