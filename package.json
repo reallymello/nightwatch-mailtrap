@@ -4,9 +4,8 @@
   "description": "Nightwatch plugin adding custom assertions for e2e email test scenarios with mailtrap.io",
   "main": "index.js",
   "scripts": {
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "lint": "eslint . --ext .js",
-    "lint:fix": "eslint . --ext .js,.ts --fix",
+    "lint": "eslint ./nightwatch/** ./tests/**",
+    "lint:fix": "eslint ./nightwatch/** ./tests/** --fix",
     "test": "rimraf ./tests_output/ && nightwatch --env chrome"
   },
   "files": [
