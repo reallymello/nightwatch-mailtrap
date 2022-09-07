@@ -6,7 +6,7 @@ Nightwatch.js 🦉 plugin adding custom assertions for covering email functional
 
 ## Purpose
 
-In your end-to-end (e2e) Nightwatch browser test automation you may encounter scenarios where you need to ensure an email is sent out by the system under test to the correct recipient and verify its contents. Other scenarios, like user registration, may require following a link received in an email. This is hard to do programmatically with most mail services in a CI/CD system, but Mailtrap provides an email sandbox service with API that let's you programmatically receive and read email messages to their virtual inboxes.
+In your end-to-end (e2e) [Nightwatch](https://nightwatchjs.org/) browser test automation you may encounter scenarios where you need to ensure an email is sent out by the system under test to the correct recipient and verify its contents. Other scenarios, like user registration, may require following a link received in an email. This is hard to do programmatically with most mail services in a CI/CD system, but Mailtrap provides an email sandbox service with API that let's you programmatically receive and read email messages to their virtual inboxes.
 
 The nightwatch-mailtrap plugin will allow one to programmatically
 
@@ -46,7 +46,7 @@ module.exports = {
 
 ## Installation (for Nightwatch >= v2.0)
 
-1. In an existing working Nightwatch.js test project open `nightwatch.conf.js`
+1. In an existing working [Nightwatch.js](https://nightwatchjs.org/guide/quickstarts/create-and-run-a-nightwatch-test.html) test project open `nightwatch.conf.js`
 2. Locate or add the `plugins:` section and append `nightwatch-mailtrap` to the array.
 
 ```js
