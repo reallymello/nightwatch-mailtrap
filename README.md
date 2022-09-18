@@ -12,6 +12,7 @@ The nightwatch-mailtrap plugin will allow one to programmatically
 
 - Assert inbox message count (optionally filtered by subject, recipient name, or recipient address)
 - Assert partial text match of email message body
+- Assert partial text match of email subject
 - Extract the first link from an email message body
 
 ## Examples
@@ -38,6 +39,14 @@ module.exports = {
       inboxId,
       'Welcome'
     );
+
+    // Assert the text of the first email matching 'latest tests' matches 'The latest tests delivered...'
+    browser.assert.emailSubjectContains(
+      'The latest tests delivered straight to your inbox',
+      inboxId,
+      'latest tests' // optional search filter
+    );
+  },
 
     browser.end();
   },
