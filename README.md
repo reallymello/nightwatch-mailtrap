@@ -145,4 +145,4 @@ browser.assert.expectedInboxCount(
 );
 ```
 
-Check my [software testing](https://www.davidmello.com/software-testing) blog for usage articles.
+See full article [Automated Email Testing with Nightwatch and MailTrap](https://www.davidmello.com/email-testing-nightwatch-mailtrap/) for more information.
