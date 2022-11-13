@@ -1,6 +1,6 @@
 {
   "name": "nightwatch-mailtrap",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Nightwatch plugin adding custom assertions for e2e email test scenarios with mailtrap.io",
   "main": "index.js",
   "scripts": {
