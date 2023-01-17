@@ -33,7 +33,7 @@
   "homepage": "https://github.com/reallymello/nightwatch-mailtrap#readme",
   "devDependencies": {
     "assert": "^2.0.0",
-    "chromedriver": "^107.0.3",
+    "chromedriver": "^109.0.0",
     "eslint": "^8.23.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
