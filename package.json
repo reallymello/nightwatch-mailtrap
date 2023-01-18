@@ -5,7 +5,7 @@
   "main": "index.js",
   "types": "./nightwatch/types/index.d.ts",
   "scripts": {
-    "lint": "eslint ./nightwatch/** ./tests/**",
+    "lint": "eslint ./nightwatch/commands/** ./nightwatch/assertions/** ./tests/**",
     "lint:fix": "eslint ./nightwatch/** ./tests/** --fix",
     "test": "rimraf ./tests_output/ && nightwatch --env chrome"
   },
