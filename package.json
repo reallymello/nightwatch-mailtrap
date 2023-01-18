@@ -3,6 +3,7 @@
   "version": "1.0.5",
   "description": "Nightwatch plugin adding custom assertions for e2e email test scenarios with mailtrap.io",
   "main": "index.js",
+  "types": "./nightwatch/types/index.d.ts",
   "scripts": {
     "lint": "eslint ./nightwatch/** ./tests/**",
     "lint:fix": "eslint ./nightwatch/** ./tests/** --fix",
@@ -32,6 +33,7 @@
   },
   "homepage": "https://github.com/reallymello/nightwatch-mailtrap#readme",
   "devDependencies": {
+    "@types/nightwatch": "^2.3.18",
     "assert": "^2.0.0",
     "chromedriver": "^108.0.0",
     "eslint": "^8.23.0",
